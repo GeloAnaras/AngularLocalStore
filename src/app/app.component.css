@@ -1,0 +1,15 @@
+header>button, header>.header-container>button{
+  padding: 5px;
+}
+header>.header-container{
+  display: inline-block;
+}
+.base{
+  width: 100%;
+  max-width: 600px;
+  background: #f7eaca;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

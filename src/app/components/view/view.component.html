@@ -1,0 +1,8 @@
+<p>{{currentPost.title}}</p>
+<p>{{currentPost.text}}</p>
+<p>{{currentPost.author}}</p>
+<p>{{currentPost.date}}</p>
+<div class="edit" *ngIf="authUser !== null && currentPost.author === authUser.login">
+  <a [routerLink]="['/edit',postId]">EDIT</a><br>
+  <a (click)="onDelete()">DELETE</a>
+</div>

@@ -1,0 +1,6 @@
+<form action="#">
+  <input type="text" placeholder="title" [(ngModel)]="title" name="login">
+  <textarea placeholder="text" [(ngModel)]="text" name="text"></textarea>
+  <input *ngIf="!post" type="submit" value="CREATE" (click)="create()">
+  <input *ngIf="post" type="submit" value="EDIT" (click)="edit()">
+</form>

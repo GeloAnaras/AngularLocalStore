@@ -1,0 +1,22 @@
+
+<ul class="post" *ngFor="let post of postsArray;let i = index">
+  <ng-container *ngIf="i < page*5 && i >= (page*5)-5">
+    <li><a [routerLink]="['/view',i]">{{post.title}}</a></li>
+    <li>{{post.text}}</li>
+    <li>{{post.author}}</li>
+    <li>{{post.date}}</li>
+    <div class="edit" *ngIf="authUser !== null && post.author === authUser.login">
+      <!--<a [routerLink]="['/view',i,'flag']">EDIT</a><br>-->
+      <a [routerLink]="['/edit',i]">EDIT</a><br>
+      <a (click)="onDelete(i)">DELETE</a>
+    </div>
+  </ng-container>
+</ul>
+<ul class="pagination" >
+  <ng-container *ngFor="let page of pageCount;let i = index">
+    <li>
+      <a (click)="paginate(i+1)">{{i+1}}</a>
+    </li>
+  </ng-container>
+
+</ul>
